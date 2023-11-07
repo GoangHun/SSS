@@ -19,7 +19,6 @@ public class IdleState : NpcStateBase
 
         agent.speed = speed;
         agent.isStopped = true;
-
     }
 
     public override void Exit()

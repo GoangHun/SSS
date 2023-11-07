@@ -30,6 +30,11 @@ public class TraceState : NpcStateBase
             npcController.SetState(NpcController2.States.Idle);
             return;
         }
+        else if (distansToPlayer <= npcController.attackRange)
+        {
+            npcController.SetState(NpcController2.States.Attack);
+            return;
+        }
         timer += Time.deltaTime;
         if (timer > npcController.traceInterval)
         {

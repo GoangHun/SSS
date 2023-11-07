@@ -13,19 +13,22 @@ public abstract class StateBase
 public abstract class NpcStateBase : StateBase
 {
     protected NpcController2 npcController;
-    protected  Animator animator;
+    protected Animator animator;
     protected NavMeshAgent agent;
     protected float agentSpeed, speed;
     protected Transform player;
     protected Transform[] waypoints;
+    protected CharacterStats characterStats;
+
     public NpcStateBase(NpcController2 npcCtrl)
     {
         npcController = npcCtrl;    
         animator = npcController.GetComponent<Animator>();
         agent = npcController.GetComponent<NavMeshAgent>();
+        characterStats = npcController.GetComponent<CharacterStats>();
 
         agentSpeed = agent.speed;
-        speed = agentSpeed *0.5f;
+        speed = agentSpeed * 0.5f;
 
   
         player = GameObject.FindWithTag("Player").transform;
